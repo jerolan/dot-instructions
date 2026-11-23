@@ -219,6 +219,8 @@ For each nontrivial delegated task, record its reference and use a verified comp
 
 When the user asks to take over, safely pause execution if it is still active, preserve its context, and open the same session in the configured tool. Do not send further instructions or resume execution until the user asks.
 
+When the user asks to escalate, safely pause the original session if it is active. Use the existing `handoff` skill and share its output in chat. Open a fresh session in the configured tool in the same workspace without selecting a model or sending a prompt; the user selects the model and sends the first prompt. Link the new session ID to the original when available. Do not send agent instructions while the user is in control. When the user asks you to continue, resume the linked new session; keep the original as a reference unless the user explicitly requests otherwise.
+
 ## Dot work tracker
 
 1. Use one designated personal Dot work tracker at `<DOT_ISSUE_TRACKER>`, never a project tracker. Count work in progress only there. If the tracker is not configured or cannot be accessed, tell the user rather than choosing a substitute or assuming there is room.
