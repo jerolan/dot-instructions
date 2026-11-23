@@ -8,9 +8,12 @@ Dot, follow README.md in the repository I just gave you and configure yourself.
 
 ## Set up Dot
 
-1. **Load the instructions.** Only run setup when the user explicitly requests it. Use a host-supported instruction-file setting to load [`Instructions.template`](Instructions.template) explicitly, or paste its raw text into the host's supported instructions field. Keep all three tagged blocks. Neither the repository nor the template is auto-discovered. If Dot cannot change its instructions, tell the user where to load or paste them.
-2. **Propose the private file.** Before creating `SOUL.md`, announce the proposed path outside this repository and give the user a chance to choose another path. Use a private location that the intended Dot can reach through supported access. Start from the blank template below only if the file does not exist. Preserve existing content and add only authorized details. Keep private settings and secrets out of this repository.
-3. **Save the pointer.** In a supported profile or setting that loads in fresh sessions, persist an explicit instruction such as `Read SOUL.md at <private path> when the session starts.` If Dot cannot save it, give the user the exact pointer to add and the supported place to add it. If the host cannot read the external file, leave private context unavailable. Do not bypass access controls or move the file to a shared location.
+Run setup only when the user explicitly requests it.
+
+1. **Choose a private directory.** Use an absolute directory outside this repository that Dot can reach through supported host access. Announce the chosen absolute path to `SOUL.md` before creating it. Give the user a chance to choose a different path.
+2. **Prepare `SOUL.md`.** Use the blank template below only if the file does not exist. Preserve existing content and add only authorized details. Keep private settings and secrets out of this repository. If the host cannot read the external file, leave private context unavailable. Do not bypass access controls or move the file to a shared location.
+3. **Render a private copy.** In a copy of [`Instructions.template`](Instructions.template), replace only `<SOUL_DIRECTORY>` with the chosen absolute directory, without a trailing slash. For example, `/home/example/.config/dot` gives `/home/example/.config/dot/SOUL.md`. Keep all three tagged blocks. Leave the placeholder in the repository and do not commit the rendered copy.
+4. **Load the rendered copy.** Use the host's supported instruction-file setting or paste the rendered text into its supported instructions field so it loads in fresh sessions. Neither the repository nor the template is auto-discovered. If Dot cannot load the copy, tell the user exactly where to load or paste it. The rendered copy already contains the pointer. Do not add a separate pointer or edit the instructions after loading to add one.
 
 Record only the orchestrator the user declares for each environment. OpenCode and Codex are examples, not defaults. Do not choose or test an orchestrator or follow up about it during setup. Report inability only after an actual attempt to use it for work.
 
@@ -55,7 +58,7 @@ Leave unused fields blank. Repeat the wiki and project entries as needed, or omi
 
 ## Check a fresh session
 
-Start a new session without pasting the template or supplying the private path again. Ask Dot:
+Start a new session without pasting the instructions or supplying the private path again. Ask Dot:
 
 ```text
 Without writing anything, tell me which tracker counts toward your
@@ -63,4 +66,8 @@ work-in-progress limit, what that limit is, and whether you can read
 SOUL.md from its configured pointer. Do not quote the path or contents.
 ```
 
-Expect Dot to name only its designated work tracker and a cap of three **In Progress** cards. If the pointer or file is missing or unreadable, Dot tells you to configure `SOUL.md` or restore access. It does not recreate the file or rerun setup. This check does not invoke an orchestrator or modify a tracker or wiki.
+Expect Dot to name only its designated work tracker and a cap of three **In Progress** cards. If the pointer is missing or still contains the placeholder, Dot tells you once to request explicit setup. If the configured file is missing or unreadable, restore the file or its access. Dot does not recreate the file or rerun setup automatically. This check does not invoke an orchestrator or modify a tracker or wiki.
+
+## Update Dot
+
+Make personal edits in `SOUL.md`, not in the loaded instructions. To change the pointer or adopt a template revision, deliberately render a fresh copy from `Instructions.template` and update the host's instructions with that copy. This keeps the loaded instructions aligned with the template. Do not make ad hoc edits to the loaded instructions during a session.
