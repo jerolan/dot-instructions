@@ -1,7 +1,13 @@
 Give Dot this repository through an authorized connection and paste this request:
 
 ```text
-Dot, follow README.md in the repository I just gave you and configure yourself.
+Dot, use the guided personalization interview in README.md in the repository I
+just gave you. Ask one group of questions at a time and wait for my answers.
+Leave skipped choices unset. Do not run delegation tools or probe trackers or
+wikis during the interview. Propose a private absolute SOUL.md path and show me
+what you would save. Wait for my approval before writing or loading anything.
+After approval, follow the setup steps. Replace only <SOUL_DIRECTORY> in a
+private copy of Instructions.template before loading that copy.
 ```
 
 # Dot instructions
@@ -10,12 +16,22 @@ Dot, follow README.md in the repository I just gave you and configure yourself.
 
 Run setup only when the user explicitly requests it.
 
-1. **Choose a private directory.** Use an absolute directory outside this repository that Dot can reach through supported host access. Announce the chosen absolute path to `SOUL.md` before creating it. Give the user a chance to choose a different path.
+1. **Run the interview.** Use the questions below in order. Announce the proposed `SOUL.md` path and show the draft before asking for approval to save it and load the rendered instructions.
 2. **Prepare `SOUL.md`.** Use the blank template below only if the file does not exist. Preserve existing content and add only authorized details. Keep private settings and secrets out of this repository. If the host cannot read the external file, leave private context unavailable. Do not bypass access controls or move the file to a shared location.
-3. **Render a private copy.** In a copy of [`Instructions.template`](Instructions.template), replace only `<SOUL_DIRECTORY>` with the chosen absolute directory, without a trailing slash. For example, `/home/example/.config/dot` gives `/home/example/.config/dot/SOUL.md`. Keep all three tagged blocks. Leave the placeholder in the repository and do not commit the rendered copy.
+3. **Render a private copy.** In a copy of [`Instructions.template`](Instructions.template), replace only `<SOUL_DIRECTORY>` with the approved absolute directory, without a trailing slash. For example, `/home/example/.config/dot` gives `/home/example/.config/dot/SOUL.md`. Keep all three tagged blocks. Leave the placeholder in the repository and do not commit the rendered copy.
 4. **Load the rendered copy.** Use the host's supported instruction-file setting or paste the rendered text into its supported instructions field so it loads in fresh sessions. Neither the repository nor the template is auto-discovered. If Dot cannot load the copy, tell the user exactly where to load or paste it. The rendered copy already contains the pointer. Do not add a separate pointer or edit the instructions after loading to add one.
 
-Record only the orchestrator the user declares for each environment. OpenCode and Codex are examples, not defaults. Do not choose or test an orchestrator or follow up about it during setup. Report inability only after an actual attempt to use it for work.
+## Guided personalization interview
+
+Ask one group at a time. Accept "skip" and leave unspecified fields unset. Do not write files or change settings while collecting answers.
+
+1. **Identity and boundaries.** "What should I call you, and which role or responsibilities should I know about? How should I report progress? Which sources can I use, and for what? What should stay private, and which actions need your approval?" Do not ask for credentials or tokens.
+2. **Delegation by environment.** "Where should I delegate nontrivial work? For each environment, which tool have you chosen? How should I invoke it: through a named host integration or a command you supply? If you already have a preferred profile, what is its name?" OpenCode and Codex are examples, not defaults. Do not choose a tool or profile for the user, chase skipped answers, or run setup tests. Report inability only after an actual attempt to use the tool for authorized work.
+3. **Personal Dot tracker.** "Which one tracker should I use for Dot's own work? What is its name and location?" Explain that only its **In Progress** cards count toward Dot's cap of three. Project Jira or GitHub trackers stay separate. Use them only when the project's local `AGENTS.md` or equivalent guidance calls for it and the task authorizes it. Do not register them in `SOUL.md` or count them toward Dot's limit.
+4. **Wiki roots.** "Which wikis, if any, should I consult? For each one, what is its name, scope, root path, and index path? Is it private or shared, and who is the intended audience?" Keep private and shared roots separate. Each root has its own index. Record pointers, not copies of wiki pages.
+5. **Projects.** "Which projects, if any, should I know about? For each one, what's its name, scope, and path? Is there project guidance I should know where to find?" Follow the project's local `AGENTS.md` or equivalent when working there. Do not copy project instructions or tracker configuration into `SOUL.md`.
+6. **Private `SOUL.md` location.** Choose a private absolute directory outside this repository that Dot can reach through supported host access. State the full proposed path and ask the user to confirm or replace it. For example: "I propose `/home/example/.config/dot/SOUL.md`. Should I use that path or a different one?" Use the confirmed path when you ask for approval to save.
+7. **Review before saving.** Show the proposed path and the `SOUL.md` draft or additions. Note what will stay unset and what belongs elsewhere. Accept corrections and wait for approval before continuing setup.
 
 ## Fill in `SOUL.md`
 
@@ -40,6 +56,8 @@ Leave unused fields blank. Repeat the wiki and project entries as needed, or omi
 
 - Environment:
   - User-declared orchestrator for nontrivial work:
+  - Invocation:
+  - Preferred profile (optional):
 
 ## Wikis (optional)
 
@@ -55,6 +73,21 @@ Leave unused fields blank. Repeat the wiki and project entries as needed, or omi
   - Scope:
   - Path:
 ```
+
+### Fictional example
+
+Here's how Dot would map a fictional user's answers to `SOUL.md` and the rendered instructions. Do not use these values as defaults.
+
+| User's answer | Where it goes |
+| --- | --- |
+| "I'm Rowan, release coordinator. Lead with blockers. Use the team runbook for release questions. Ask before posting externally." | **Personal context:** identity and role, reporting preference, trusted source and scope, and approval boundary. |
+| "On my laptop, use OpenCode through the host integration named Local OpenCode with my Review profile. Skip the remote workspace." | **Orchestrators:** laptop → OpenCode, Local OpenCode integration, Review profile. The remote workspace stays unset. |
+| "Use my Dot Board at `https://tracker.example/dot`. Harbor uses Jira." | **Dot work tracker:** Dot Board and its URL. Only its **In Progress** cards count toward the cap of three. Harbor's Jira stays in project guidance. |
+| "Personal Notes is for my planning only, at `/home/example/private/notes`. Release Runbook is for the release team, at `/srv/team/releases`. Both use `index.md` at the root." | **Wikis:** Personal Notes (private planning), `/home/example/private/notes` with `/home/example/private/notes/index.md`. Release Runbook (shared release guidance), `/srv/team/releases` with `/srv/team/releases/index.md`. |
+| "Harbor handles release tooling at `/home/example/src/harbor`. Follow its `AGENTS.md`." | **Projects:** Harbor, release tooling, `/home/example/src/harbor`. Read `AGENTS.md` there when working on Harbor. |
+| "Yes, use `/home/example/.config/dot/SOUL.md`." | **Rendered instructions:** replace `<SOUL_DIRECTORY>` with `/home/example/.config/dot` before loading. The path is not a separate `SOUL.md` entry. |
+
+Leave credentials, wiki contents, project instructions, and project tracker settings out of `SOUL.md`. Keep real answers and the rendered copy out of this repository.
 
 ## Check a fresh session
 
