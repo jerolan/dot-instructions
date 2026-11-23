@@ -1,21 +1,22 @@
-# Dot Instructions
+Give Dot this repository through an authorized connection and paste this request:
 
-Use [AGENTS.md](AGENTS.md) for reusable ways of working. Configure a separate, private `SOUL.md` for identity, preferences, and private destinations. Follow the setup steps below.
+```text
+Dot, follow README.md in the repository I just gave you and configure yourself.
+```
 
-## Set up your agent
+# Dot instructions
 
-1. Choose an explicit location for `SOUL.md` outside this repository. Copy the blank template there and restrict access to the people and tools you intend to use it. Leave the file unconfigured if you do not need personalized context.
-2. Choose private destinations for personal records and private wiki content. If you use shared wiki roots, register them separately. Give each root its own `index.md` and record that index's location in `SOUL.md`. The registry points to the indexes. It is not a global index of their contents.
-3. Review what the target agent harness will receive. Remove secrets and anything that should not reach that harness or the audience of its outputs. Paste only the instructions you intend it to use. If it needs `SOUL.md`, configure an explicit pointer and grant only the access it needs. Point to an optional machine profile from `SOUL.md`, not from these generic instructions.
-4. Start a fresh session and verify that the intended instructions are active with a harmless behavior check. If you configured a private pointer, check that the session can read the intended file without quoting private contents. Confirm the selected destination before any real write. If loading or access fails, treat the private context as unavailable until you fix the configuration.
+## Set up Dot
 
-## Configure Dots manually
+1. **Load the instructions.** Only run setup when the user explicitly requests it. Use a host-supported instruction-file setting to load [`Instructions.template`](Instructions.template) explicitly, or paste its raw text into the host's supported instructions field. Keep all three tagged blocks. Neither the repository nor the template is auto-discovered. If Dot cannot change its instructions, tell the user where to load or paste them.
+2. **Propose the private file.** Before creating `SOUL.md`, announce the proposed path outside this repository and give the user a chance to choose another path. Use a private location that the intended Dot can reach through supported access. Start from the blank template below only if the file does not exist. Preserve existing content and add only authorized details. Keep private settings and secrets out of this repository.
+3. **Save the pointer.** In a supported profile or setting that loads in fresh sessions, persist an explicit instruction such as `Read SOUL.md at <private path> when the session starts.` If Dot cannot save it, give the user the exact pointer to add and the supported place to add it. If the host cannot read the external file, leave private context unavailable. Do not bypass access controls or move the file to a shared location.
 
-Dots do not automatically load this repository's `AGENTS.md` or your external `SOUL.md`. Paste only the instructions intended for the Dot into its configuration. If it needs an external file, configure the pointer manually and verify that the Dot has explicit access. If the Dot cannot reach the private file, leave that context unavailable rather than moving the file to a shared place.
+Record only the orchestrator the user declares for each environment. OpenCode and Codex are examples, not defaults. Do not choose or test an orchestrator or follow up about it during setup. Report inability only after an actual attempt to use it for work.
 
-## Blank `SOUL.md` template
+## Fill in `SOUL.md`
 
-Copy this block into your external private file. Leave unused fields blank and repeat the wiki root block for each authorized root. The optional machine profile can be an explicitly selected file in a private directory or a profile file in a private wiki. Nothing discovers it automatically.
+Leave unused fields blank. Repeat the wiki and project entries as needed, or omit either section. Keep private and shared wiki roots separate. Each wiki has its own index. Register only the one designated Dot work tracker, not any project trackers. Read project-local guidance such as `AGENTS.md` for project work.
 
 ```markdown
 # SOUL
@@ -24,30 +25,42 @@ Copy this block into your external private file. Leave unused fields blank and r
 
 - Identity and role:
 - Preferences:
-- Workflows:
-- Destinations and intended audiences:
+- Trusted sources and scope:
+- Actions that need approval:
 
-## Boundaries
+## Dot work tracker
 
-- Trusted sources and their scope:
-- Permissions and actions that need approval:
-- Private and shared separation rules:
-
-## Wiki root registry
-
-### <root label>
-
+- Name:
 - Location:
-- Scope:
-- Visibility (private or shared):
-- Access rules (read, write, share):
-- Location of this root's `index.md`:
 
-## Optional machine profile
+## Orchestrators
 
-- Explicit pointer to the selected private profile file:
+- Environment:
+  - User-declared orchestrator for nontrivial work:
+
+## Wikis (optional)
+
+- Name:
+  - Scope:
+  - Root path:
+  - Path to this wiki's index:
+  - Visibility (private or shared):
+
+## Projects (optional)
+
+- Name:
+  - Scope:
+  - Path:
 ```
 
-## Attribution
+## Check a fresh session
 
-`AGENTS.md` includes Matt Pocock's chief-of-staff guidance and the `i-have-adhd` readability guidance.
+Start a new session without pasting the template or supplying the private path again. Ask Dot:
+
+```text
+Without writing anything, tell me which tracker counts toward your
+work-in-progress limit, what that limit is, and whether you can read
+SOUL.md from its configured pointer. Do not quote the path or contents.
+```
+
+Expect Dot to name only its designated work tracker and a cap of three **In Progress** cards. If the pointer or file is missing or unreadable, Dot tells you to configure `SOUL.md` or restore access. It does not recreate the file or rerun setup. This check does not invoke an orchestrator or modify a tracker or wiki.
