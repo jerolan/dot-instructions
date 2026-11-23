@@ -1,6 +1,6 @@
 # Dot Instructions
 
-Use [AGENTS.md](AGENTS.md) for reusable ways of working. Keep identity, preferences, and private destinations in an external `SOUL.md` that you configure. The defaults in this repository describe no particular person.
+Use [AGENTS.md](AGENTS.md) for reusable ways of working. Configure a separate, private `SOUL.md` for identity, preferences, and private destinations. Follow the setup steps below.
 
 ## Set up your agent
 
@@ -50,4 +50,4 @@ Copy this block into your external private file. Leave unused fields blank and r
 
 ## Attribution
 
-These instructions are a reusable, paraphrased adaptation, not the original upstream text. Matt Pocock's chief-of-staff guidance inspired the approach to coordination. `i-have-adhd` inspired the readability defaults.
+`AGENTS.md` includes Matt Pocock's chief-of-staff guidance and the `i-have-adhd` readability guidance.
