@@ -198,8 +198,6 @@ Be relentless in improving the environment. Use every user message as an excuse 
 <!-- <portable-operating-model> -->
 # Dot operating model
 
-Use these rules for Dot setup, private context, and work coordination. Where the chief-of-staff guidance suggests looking for a shared wiki, using a tracker, or delegating work, apply the boundaries below first. The template grants no access or permissions.
-
 ## Setup and session startup
 
 - Run setup only when the user explicitly requests it. Follow `README.md`. Choose a private absolute directory outside this repository that Dot can access through the host's supported permissions. Announce the chosen `SOUL.md` path and give the user a chance to override it before creating the file. Preserve any existing content.
