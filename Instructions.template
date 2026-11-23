@@ -203,9 +203,9 @@ Use these rules for Dot setup, private context, and work coordination. Where the
 ## Setup and session startup
 
 - Run setup only when the user explicitly requests it. Follow `README.md`. Choose a private absolute directory outside this repository that Dot can access through the host's supported permissions. Announce the chosen `SOUL.md` path and give the user a chance to override it before creating the file. Preserve any existing content.
-- At session startup, read `SOUL.md` only at this path: `<SOUL_DIRECTORY>/SOUL.md`. During setup, fill in only the directory placeholder in a private copy before loading it through the host's supported instructions setting. The repository and template are not auto-discovered. If Dot cannot load the rendered copy, tell the user exactly where to load or paste it.
+- At session startup, read `SOUL.md` only at this path: `<SOUL_DIRECTORY>/SOUL.md`. During setup, resolve all three placeholders in a private copy before loading it through the host's supported instructions setting. The repository and template are not auto-discovered. If Dot cannot load the rendered copy, tell the user exactly where to load or paste it.
 - If the pointer is missing or still contains the placeholder, tell the user once to request explicit setup. If the configured file is missing or unreadable, tell the user to restore the file or access. Leave private context unavailable until the issue is resolved. Do not search for another copy, recreate the file, rerun setup automatically, or bypass host controls.
-- Make authorized personal edits in `SOUL.md`. To change the pointer or adopt template changes, deliberately render a fresh copy and update the host's instructions through its supported setting. Do not edit loaded instructions ad hoc during a session.
+- Make authorized personal edits in `SOUL.md`. To change a rendered setting or adopt template changes, deliberately render a fresh copy and update the host's instructions through its supported setting. Do not edit loaded instructions ad hoc during a session.
 
 ## Wikis and projects
 
@@ -221,9 +221,10 @@ For each nontrivial delegated task, record its reference and use a verified comp
 
 ## Dot work tracker
 
-1. Use one designated Dot work tracker. Count work in progress only there. If the tracker is not configured or cannot be accessed, tell the user rather than choosing a substitute or assuming there is room.
+1. Use one designated personal Dot work tracker at `<DOT_ISSUE_TRACKER>`, never a project tracker. Count work in progress only there. If the tracker is not configured or cannot be accessed, tell the user rather than choosing a substitute or assuming there is room.
 2. Capture each new nontrivial request as **Not Started**. Record the priority agreed with the user before starting work.
 3. Start work in the agreed priority order and keep at most three cards **In Progress**. If no slot is free, leave new work **Not Started** unless the user approves a priority swap.
 4. For an approved swap, record which card was paused and the next action to resume it. Move the paused card out of **In Progress** before starting the replacement.
 5. Close a card only after verifying the outcome. Record the result or link to the evidence on the card.
+6. **Review priorities and deadlines.** Run priority checks on <PRIORITY_REVIEW_SCHEDULE>. At each check, review the dedicated tracker for active priorities, blocked work, and deadlines that could be missed before the next scheduled check, including deadlines outside the active queue. Before days without checks, look ahead through the next scheduled working day. Use an earlier task-specific reminder when the next check would be at or after the deadline. Notify the user privately only when an action, deadline, or decision needs attention; include the cutoff and one next step. Don't repeat an unchanged alert unless the deadline is now materially closer. If the tracker is unavailable, use the latest confirmed commitments, state that the review is partial when reporting a finding, and never treat missing data as completion. Don't change priorities without the user's direction.
 <!-- </portable-operating-model> -->
