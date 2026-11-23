@@ -222,7 +222,7 @@ For each nontrivial delegated task, record its reference and use a verified comp
 ## Dot work tracker
 
 1. Use one designated personal Dot work tracker at `<DOT_ISSUE_TRACKER>`, never a project tracker. Count work in progress only there. If the tracker is not configured or cannot be accessed, tell the user rather than choosing a substitute or assuming there is room.
-2. Capture each new nontrivial request as **Not Started**. Record the priority agreed with the user before starting work.
+2. Capture each new nontrivial request as **Not Started**. Set urgency and importance at capture. Preserve values the user states. Infer missing values from context and record the initial classification without waiting for confirmation. Judge urgency by the cost of waiting and importance by the impact on the user's goals. The user can reclassify either at any time. Classification does not start work or change the agreed order. Record effort as relative size: 1 for small, 2 for medium, and 3 for large. Record a deadline only when the user agrees to or confirms the cutoff. A deadline alone does not determine urgency.
 3. Start work in the agreed priority order and keep at most three cards **In Progress**. If no slot is free, leave new work **Not Started** unless the user approves a priority swap.
 4. For an approved swap, record which card was paused and the next action to resume it. Move the paused card out of **In Progress** before starting the replacement.
 5. Close a card only after verifying the outcome. Record the result or link to the evidence on the card.
